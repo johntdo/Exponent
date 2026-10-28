@@ -1,0 +1,9 @@
+@forward "./main/";
+@forward "./mod/";
+@forward "./overlay/";
+@forward "./part/";
+@forward "./plugin/";
+
+:root {
+    container: root;
+}

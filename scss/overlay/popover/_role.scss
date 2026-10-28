@@ -1,0 +1,39 @@
+@use "../../top/vars" as *;
+@use "../../top/boxes" as box;
+@use "../../top/buttons" as bt;
+
+// Select role preview
+.container_d806b9 {
+    @include box.beigeBox;
+
+    // Search role
+    .container__5a838 {
+        @include bt.inset;
+    }
+
+    // Role
+    .item_f975d3 {
+        border-radius: 0;
+
+        &.selected_f975d3 {
+            background: $color-selected;
+        }
+
+        .itemLabel_f975d3 span {
+            background: var(--xp-bg-tint-color);
+        }
+
+        // Checkbox
+        .box__09aca {
+            border-radius: 0;
+
+            &.checked__09aca {
+                background: $color-shortcut-2 !important;
+
+                path {
+                    fill: $color-start-2 !important;
+                }
+            }
+        }
+    }
+}

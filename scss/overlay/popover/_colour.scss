@@ -1,0 +1,43 @@
+@use "../../top/vars" as *;
+@use "../../top/boxes" as box;
+@use "../../top/buttons" as bt;
+@use "../../top/shadows" as shd;
+
+// Color picker
+.customColorPicker__459fb {
+    @include box.beigeBox;
+
+    // Hex code box
+    .input__0ed4f {
+        @include bt.button;
+    }
+
+    // Suggested colour buttons
+    .suggestedColor__459fb {
+        @include bt.button;
+    }
+
+    // Saturation brightness grid
+    .saturation__889ee {
+        @include shd.boxShadow($ISINSET: true);
+    }
+
+    // Hue slider
+    .hue-horizontal {
+        @include shd.boxShadow;
+
+        // Grabber
+        div:last-child {
+            height: 12px;
+            width: 10px;
+            margin-top: -4px;
+
+            div {
+                border-radius: 3px;
+                border: solid $color-start-2;
+                border-width: 3px 0;
+                @include shd.boxShadow($ISINSET: true);
+            }
+        }
+    }
+}

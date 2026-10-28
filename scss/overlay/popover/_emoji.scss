@@ -1,0 +1,170 @@
+@use "../../top/vars" as *;
+@use "../../top/boxes" as box;
+@use "../../top/buttons" as bt;
+
+// Emoji pickers
+#emoji-picker-tab-panel {
+    --interactive-normal: var(--xp-txt-color);
+    --interactive-text-default: var(--xp-txt-color);
+    --interactive-hover: var(--xp-txt-color);
+    --interactive-text-hover: var(--xp-txt-color);
+    --interactive-active: var(--xp-txt-color);
+    --interactive-text-active: var(--xp-txt-color);
+    --text-normal: var(--xp-txt-color);
+    --text-default: var(--xp-txt-color);
+    --header-secondary: var(--xp-txt-color);
+    --text-muted: var(--xp-txt-color);
+    --background-primary: #{$color-taskbar-3};
+    --background-base-lower: #{$color-taskbar-3};
+
+    .header_c0e32c {
+        background: var(--xp-bg-tint-color);
+        border-radius: 0;
+
+        .container__5a838 {
+            @include bt.inset;
+        }
+
+        .diversitySelectorButton_a45a2a,
+        .diversitySelectorOptions_a45a2a {
+            @include bt.button;
+            padding: 3px;
+        }
+    }
+
+    .emojiPicker_c0e32c {
+        background: var(--xp-bg-color);
+        border-radius: 0;
+
+        // Emoji grid
+        .bodyWrapper_c0e32c {
+            box-shadow: (inset 0 0 2px 2px grey);
+
+            // Section title
+            .wrapper__14245 {
+                background: linear-gradient(to bottom, transparent, var(--xp-bg-color), transparent);
+            }
+
+            // Hovered emoji
+            .emojiItem_fc7141.emojiItemSelected_fc7141 {
+                @include bt.inset;
+            }
+        }
+
+        // Emoji info
+        .inspector_aeaaeb {
+            background: var(--xp-bg-tint-color);
+        }
+    }
+
+    .categoryList_c0e32c {
+        background: var(--xp-bg-tint-color);
+    }
+}
+
+// Reaction emoji picker
+.animatorLeft_faf9c0 > #emoji-picker-tab-panel {
+    @include box.windowHasPseudoTitle("Add a reaction");
+}
+
+// Gif / sticker / emoji picker
+.contentWrapper__08434 {
+    --interactive-normal: var(--xp-txt-color);
+    --interactive-text-default: var(--xp-txt-color);
+    --interactive-hover: var(--xp-txt-color);
+    --interactive-text-hover: var(--xp-txt-color);
+    --interactive-active: var(--xp-txt-color);
+    --interactive-text-active: var(--xp-txt-color);
+    --text-normal: var(--xp-txt-color);
+    --text-default: var(--xp-txt-color);
+    --header-secondary: var(--xp-txt-color);
+    --text-muted: var(--xp-txt-color);
+    --background-primary: #{$color-taskbar-3};
+    --background-base-lower: #{$color-taskbar-3};
+    --background-tertiary: transparent;
+    --background-base-lowest: transparent;
+    background: var(--xp-bg-tint-color);
+    border-radius: 0;
+    overflow: visible;
+    @include box.windowHasPseudoTitle("Chat addition");
+
+    // Gif / sticker / emoji buttons
+    .navButton__08434 {
+        @include bt.button;
+
+        &.navButtonActive__08434 {
+            @include bt.inset;
+        }
+    }
+
+    // Gif / sticker searchbar
+    .container__0e476,
+    .container__5a838 {
+        @include bt.inset;
+    }
+
+    // Sticker picker
+    #sticker-picker-tab-panel {
+        // Sticker grid
+        #sticker-picker-grid {
+            background: var(--xp-bg-color);
+            box-shadow: (inset 0 0 2px 2px var(--xp-bg-shade-color));
+
+            // Section title
+            .wrapper__14245 {
+                background: linear-gradient(to bottom, transparent, var(--xp-bg-color), transparent);
+            }
+        }
+
+        // Discord default sticker button
+        .standardStickerShortcut__3ad28 {
+            background: var(--xp-bg-tint-color);
+        }
+
+        // Emoji info
+        .inspector_aeaaeb {
+            background: var(--xp-bg-tint-color);
+        }
+    }
+
+    .categoryList_c0e32c {
+        background: var(--xp-bg-tint-color);
+    }
+
+    // Gif picker
+    #gif-picker-tab-panel {
+        background: var(--xp-bg-tint-color);
+
+        // Back button
+        .backButton_fed6d3 {
+            color: var(--xp-txt-color);
+        }
+
+        // Favs category
+        .categoryFadeBlurple_d02962 {
+            background: var(--xp-zing-color);
+        }
+
+        // Item / category
+        .result__2dc39 {
+            background-color: var(--xp-bg-color) !important;
+
+            &::after {
+                box-shadow: inset 0 0 0 2px var(--xp-bg-color);
+                border-radius: 0;
+            }
+        }
+
+        // Hovered
+        .result__2dc39:focus-visible,
+        .result__2dc39:hover {
+            box-shadow: 0 11px 22px 1px var(--xp-zing-color);
+        }
+
+        // Placeholder for loading gif
+        .placeholder__2dc39 {
+            border-radius: 0;
+            background: var(--xp-set-color);
+        }
+    }
+}

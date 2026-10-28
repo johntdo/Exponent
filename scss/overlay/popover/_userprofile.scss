@@ -1,0 +1,107 @@
+@use "../../top/vars" as *;
+@use "../../top/boxes" as box;
+@use "../../top/buttons" as bt;
+
+// User profile
+// Popout or in profile settings
+.outer_c0bea0 {
+    border-radius: 0;
+    overflow: visible;
+
+    &:not(.profileContentOuter__9c3be) {
+        @include box.windowHasPseudoTitle("User info", $OFFSET: -2px);
+    }
+
+    &.profileContentOuter__9c3be {
+        border: 2px solid $color-taskbar-3;
+    }
+
+    &.custom-user-profile-theme {
+        padding: 0;
+    }
+
+    .banner_f7e69e,
+    .banner__68edb {
+        border-radius: 0;
+    }
+
+    // All profiles
+    .inner_c0bea0 {
+        border-radius: 0;
+
+        // Tint (only visible with nitro)
+        &::before {
+            border-radius: 0;
+            height: calc(100% - 2px);
+            width: calc(100% - 4px);
+        }
+
+        // Banner buttons, eg. edit profile
+        .bannerButton_fb7f94 {
+            @include bt.button;
+            color: var(--xp-txt-color);
+        }
+
+        // Hypesquad etc badges
+        .container__8061a {
+            @include bt.button;
+        }
+
+        // Inner box
+        .overlay_c0bea0,
+        .body__5be3e {
+            border-radius: 0;
+            --font-primary: Tahoma, sans-serif;
+            --font-display: Tahoma, sans-serif;
+            --font-headline: Tahoma, sans-serif;
+            @include box.indentBox;
+
+            // Roles
+            .rolePill__373b5,
+            .role_af3987 {
+                @include bt.button;
+            }
+
+            // User note
+            .note_f37d39 {
+                @include box.indentBox;
+            }
+        }
+
+        // Sunken box inset from the edges, so its shadow frames it on every side
+        .body__5be3e {
+            margin: 0 8px 8px;
+        }
+
+        // Message user
+        .footer__5be3e .channelTextArea__74017 {
+            @include box.indentBox;
+        }
+    }
+
+    // Unstyled profile
+    &:not(.custom-user-profile-theme) .inner_c0bea0 {
+        background: var(--xp-bg-tint-color);
+        --interactive-active: var(--xp-txt-color);
+        --interactive-text-active: var(--xp-txt-color);
+        --header-primary: var(--xp-txt-color);
+        --text-strong: var(--xp-txt-color);
+        --header-secondary: var(--xp-set-color);
+        --text-muted: var(--xp-set-color);
+        --text-normal: var(--xp-txt-color);
+        --text-default: var(--xp-txt-color);
+        --background-secondary: var(--xp-bg-tint-color);
+        --background-base-low: var(--xp-bg-tint-color);
+        --interactive-muted: var(--xp-bg-tint-color);
+
+        // Inner box
+        .overlay_c0bea0,
+        .body__5be3e {
+            background: var(--xp-bg-color);
+        }
+    }
+
+    .rolePill__373b5 .defaultColor__5345c {
+        color: var(--xp-txt-color);
+    }
+}
